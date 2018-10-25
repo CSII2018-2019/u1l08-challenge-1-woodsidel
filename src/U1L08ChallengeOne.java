@@ -1,24 +1,22 @@
-import javax.swing.JOptionPane;
+
 public class U1L08ChallengeOne {
 
 	public static void main(String[] args) {
-		int[] array1 = {1,4,8,3,6,9,2,6};
-		int subtract = 1;
-		int i = 0;
-		int j;
-		int endVars = array1[i];
-		int movedVars = array1[array1.length-subtract];
-		for(i = 0; i < array1.length; i++) {
-			array1[array1.length-1]=endVars;
-			array1[i]=movedVars;
-			i++;
-			endVars = array1[i];
-			subtract++;
-			movedVars = array1[array1.length-subtract];
+		int[] arrayOne = {1,4,8,3,6,9,2,6};
+		int i;
+		for(i = 0; i < arrayOne.length;i++) {
+			System.out.println("Control array: "+arrayOne[i]);
 		}
-		for(j = 0; j < array1[array1.length]; j++) {
-			System.out.println(array1[j]);
-			j++;
+		int movedVars = 0;
+		int endVars = arrayOne.length;
+		for(i = 0; i < (arrayOne.length)/2; i++) {
+			endVars -= 1;
+			movedVars = arrayOne[endVars];
+			arrayOne[endVars]=arrayOne[i];
+			arrayOne[i]=movedVars;
+		}
+		for(i = 0; i < arrayOne.length; i++) {
+			System.out.println("Reverse array: "+arrayOne[i]);
 		}
 		}
 		}
